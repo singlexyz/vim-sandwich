@@ -154,12 +154,12 @@ function! s:parse(tokenlist) abort  "{{{
     if item.is_operator
       if item.string ==# '#'
         let i = s:handle_id(itemdict, itemlist, i)
-      elseif item.string ==# '.'
-        if s:matches_filetype(&filetype, g:sandwich#jsx_filetypes)
-          let i = s:handle_className(itemdict, itemlist, i)
-        else
-          let i = s:handle_class(itemdict, itemlist, i)
-        endif
+      " elseif item.string ==# '.'
+      "   if s:matches_filetype(&filetype, g:sandwich#jsx_filetypes)
+      "     let i = s:handle_className(itemdict, itemlist, i)
+      "   else
+      "     let i = s:handle_class(itemdict, itemlist, i)
+      "   endif
       elseif item.string ==# '['
         let i = s:parse_custom_attributes(itemdict, itemlist, i)
       else
